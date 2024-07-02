@@ -1,17 +1,27 @@
-#!/usr/bin/env python
-
 from setuptools import setup
-
 from setuptools import find_packages
-from catkin_pkg.python_setup import generate_distutils_setup
 
-d = generate_distutils_setup(
-    # Uncomment until src/jsk_recognition_msgs
-    # error: package directory 'jsk_recognition_msgs' does not exist
-    # [jsk_recognition_msgs:install]
-    # packages=['jsk_recognition_msgs'],
-    # [jsk_recognition_msgs:install] error: package directory 'src/jsk_recognition_msgs' does not exist
-    # package_dir={'': 'src'},
+package_name = 'jsk_recognition_msgs'
+
+setup(
+    name=package_name,
+    version='0.0.0',
+    packages=[package_name],
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+    ],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='Your Name',
+    maintainer_email='you@example.com',
+    description='TODO: Package description',
+    license='TODO: License declaration',
+    tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+            # Add any executable scripts here
+        ],
+    },
 )
-
-setup(**d)
