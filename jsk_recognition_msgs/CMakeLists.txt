@@ -96,12 +96,6 @@ set(msg_files
 
 
 
-set(action_files
-  
-  
-  DEPENDENCIES std_msgs builtin_interfaces
-)
-
 # Generate messages, services and actions
 rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/CallPolygon.srv"
